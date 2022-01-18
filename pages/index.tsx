@@ -1,9 +1,10 @@
 import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout'
+import Layout, { siteTitle } from '../templates/layout'
 import { GetServerSideProps } from 'next'
 import { getProducts } from "../services/api"
+import Shelf from "../components/Shelf"
 
-type ProductsProps = {
+export type ProductsProps = {
   products: {
     price: string;
     name: string;
@@ -16,16 +17,9 @@ export default function Home({ products }: ProductsProps) {
   return (
     <Layout>
       <Head>
-        <title>{siteTitle}</title>
+        <title>{siteTitle} | Produtos</title>
       </Head>
-      {products?.map(item => 
-        <div>
-          <img src={item?.image}/>
-          <p>{item?.name}</p>
-          <p>{item?.price}</p>
-          <p>{item?.stock}</p>
-        </div>
-      )}
+      <Shelf products={products} />
     </Layout>
   )
 }
