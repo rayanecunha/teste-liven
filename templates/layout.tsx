@@ -1,6 +1,5 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
+import Header from "../components/Header"
 
 export const siteTitle = 'Loja Liven'
 
@@ -20,14 +19,7 @@ export default function Layout({
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header>
-        <Link href="/">
-          <a>Produtos</a>
-        </Link>
-        <Link href="/">
-          <a>Carrinho</a>
-        </Link>
-      </header>
+      <Header />
       <main>{children}</main>
     </>
   )
