@@ -6,6 +6,7 @@ import Shelf from "../components/Shelf"
 
 export type ProductsProps = {
   products: {
+    id: number;
     price: string;
     name: string;
     image: string;

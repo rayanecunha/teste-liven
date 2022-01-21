@@ -13,6 +13,10 @@ export const HeaderContainer = styled.header`
         text-decoration: none;
         font-size: 22px;
         padding: 0 10px; 
+
+        @media(max-width: 600px) {
+            font-size: 14px;
+        }
         
         &:hover {
             border-bottom: 2px solid white;

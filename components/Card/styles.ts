@@ -11,7 +11,11 @@ export const CardContainer = styled.header`
     padding: 10px;
     border-radius: 12px;
     box-shadow: 0px 1px 4px #CCCCCC;
-    margin: 20px 10px;
+    margin: 30px 40px;
+
+    &:hover {
+        box-shadow: 0px 1px 4px rgb(8, 1, 42);
+    }
 `;
 
 export const CardTitle = styled.p`
@@ -31,7 +35,7 @@ export const CardPrice = styled.p`
 export const CardButton = styled.button`
     font-size: 1;
     width: 80%;
-    background: rgb(8, 1, 42);
+    background: ${({disabled}) => disabled ? "#CCCCCC" : "rgb(8, 1, 42)"};
     color: white;
     border: none;
     padding: 8px 16px;
