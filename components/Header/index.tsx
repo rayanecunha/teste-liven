@@ -1,8 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { useContext } from 'react'
 import { HeaderContainer } from './styles'
+import AppContext from "../../context/appContext"
 
 const Header = () => {
+    const appContext = useContext(AppContext)
+    const { cartProducts } = appContext
+
     return <HeaderContainer>
         <Image
             src="/images/logo.png"
@@ -14,7 +19,9 @@ const Header = () => {
           <a>Produtos</a>
         </Link>
         <Link href="/cart">
-          <a>Carrinho</a>
+          <a>Carrinho
+            <sup>{cartProducts?.length}</sup>
+          </a>
         </Link>
     </HeaderContainer>   
 }

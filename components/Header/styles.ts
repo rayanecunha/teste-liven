@@ -14,6 +14,10 @@ export const HeaderContainer = styled.header`
         font-size: 22px;
         padding: 0 10px; 
 
+        & > sup {
+            padding-left: 6px;
+        }
+
         @media(max-width: 600px) {
             font-size: 14px;
         }
